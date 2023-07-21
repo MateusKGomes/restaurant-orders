@@ -7,7 +7,6 @@ def test_ingredient():
     ingredient2 = Ingredient('salmão')
     ingredient3 = Ingredient('tomate')
 
-
     assert ingredient.restrictions == set()
     assert ingredient.name == 'tomate'
     assert ingredient.__repr__() == "Ingredient('tomate')"

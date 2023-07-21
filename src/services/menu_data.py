@@ -14,10 +14,15 @@ class MenuData:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 if row['dish'] not in my_dish:
-                    my_dish[row['dish']] = Dish(row['dish'], float(row['price']))
+                    my_dish[row['dish']] = Dish(
+                        row['dish'], float(row['price'])
+                        )
                     ingredient = Ingredient(row['ingredient'])
-                    my_dish[row['dish']].add_ingredient_dependency(ingredient,  int(row['recipe_amount']))
+                    my_dish[row['dish']].add_ingredient_dependency(
+                        ingredient,  int(row['recipe_amount']))
                 else:
                     ingredient = Ingredient(row['ingredient'])
-                    my_dish[row['dish']].add_ingredient_dependency(ingredient,  int(row['recipe_amount']))
+                    my_dish[row['dish']].add_ingredient_dependency(
+                        ingredient,  int(row['recipe_amount'])
+                        )
         self.dishes = set(my_dish.values())
